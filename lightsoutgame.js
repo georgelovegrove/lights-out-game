@@ -1,4 +1,4 @@
-// Ensure the DOM is loaded before attempting to append children.
+// Ensure the DOM is loaded before attempting to mutate or add elements.
 window.onload = function () {
 
   // Use a multidemnsional array to represent the x and y respectively 
@@ -20,7 +20,6 @@ window.onload = function () {
   // Initally hide game option functionality 
   restartButton.style.display = 'none';
   newBoardButton.style.display = 'none';
-  boardDiv.style.display = 'none';
 
   // Once DOM items are loaded attach the event handlers
   createGameForm.onsubmit = e => newGame(e);
@@ -47,7 +46,6 @@ window.onload = function () {
     restartButton.style.display = 'inline';
     newBoardButton.style.display = 'inline';
     attemptsPara.style.display = 'block'; 
-    boardDiv.style.display = 'block'; 
   }
 
   function showGameForm(e) {
@@ -61,7 +59,6 @@ window.onload = function () {
     attemptsPara.style.display = 'none';
     restartButton.style.display = 'none';
     newBoardButton.style.display = 'none';
-    boardDiv.style.display = 'none';
   }
 
   function restartGame(e) {
