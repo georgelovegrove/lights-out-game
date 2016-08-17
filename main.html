@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Lights out game</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script type="text/javascript" src="lightsoutgame.js"></script>
+  </head>
+
+  <body>
+    <div id="container">
+      <h4> Lights off game</h4>
+      <p id="instructions"><b> Instructions:</b> Turn of all the lights in the game. Pressing a light will toggle it off or on as well as the adjacent lights.</p>
+
+      <div id="board"></div>
+      <p id="attempts"></p>
+
+      <div id="gamesetup">
+
+        <button id="restart">Restart</button>
+        <button id="newboard">New board size</button>
+
+        <form id="createGameForm"">
+          <input placeholder="width" id="width"></input>
+          <input placeholder="height" id="height"></input>
+          <button type="submit">Create board</button>
+        </form>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
