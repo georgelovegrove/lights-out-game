@@ -74,7 +74,7 @@ window.onload = function () {
 
     // Reset counter
     attemptsCounter = 0;
-    attemptsPara.innerHTML = "Attempts: " + attemptsCounter;
+    attemptsPara.innerHTML = `Attempts: ${attemptsCounter}`;
 
     // Reset board completed
     boardCompleted = false;
@@ -89,15 +89,15 @@ window.onload = function () {
 
       // Update attempts counter information
       attemptsCounter++;
-      attemptsPara.innerHTML = "Attempts: " + attemptsCounter;
+      attemptsPara.innerHTML = `Attempts: ${attemptsCounter}`;
 
       updateBoard(boardContainer, x, y);
 
-      if (checkBoardCompleted(boardContainer, xlength, ylength)) {
+      if (checkBoardCompleted(boardContainer)) {
 
         boardCompleted = true;
         let attemptText = attemptsCounter === 1 ? 'attempt' : 'attempts';
-        attemptsPara.innerHTML = "Congratulations! Completed in " + attemptsCounter + " " + attemptText + ". Restart or update the board size to continue.";
+        attemptsPara.innerHTML = `Congratulations! Completed in ${attemptsCounter} ${attemptText}. Restart or update the board size to continue.`;
       }
 
       displayBoard(boardContainer);
@@ -175,10 +175,10 @@ window.onload = function () {
     if (y < board[0].length-1)  { board[x][y+1] = !board[x][y+1]; }
   }
 
-  function checkBoardCompleted(board, x, y) {
+  function checkBoardCompleted(board) {
 
-    for (i=0; i<y; i++) {
-      for (j=0; j<x; j++) {
+    for (i=0; i<board.length; i++) {
+      for (j=0; j<board[0].length; j++) {
         if (board[i][j]) {
           return false;
         }
